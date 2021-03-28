@@ -7,51 +7,35 @@ html {
   box-sizing: inherit;
 }
 
-.img {
+.foto {
   width: 360px;
   height: 210px;
   display: block;
-  border-radius: 6px 6px 0 0;
-}
-
-.kontejner {
-  display: flex;
-  flex-direction: column;
-  width: 360px;
-  border-radius: 6px 6px 0 0;
-  margin: 10rem auto;
-  text-align: center;
   background-color: #283e50;
+  border-radius: 6px 6px 0 0;
 }
 
 body {
-  background-color: #283e50;
+  width: 360px;
   background-image: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
   color: #ffffff;
-  font-family: 'Lobster', cursive;
-  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 100px auto;
   border-radius: 6px 6px 0 0;
 }
 
 main {
   background-color: #283e50;
-  background-image: linear-gradient (#615dad, #ffc8da);
+  display: flex;
+  flex-direction: column;
   color: #ffffff;
-  font-family: 'Lobster', cursive;
-  font-size: 14px;
-  text-align: center;
-  margin: auto;
-  width: 360px;
-}
-.img {
-  background-color: #283e50;
-  width: 360px;
-  height: 210px;
-  border-radius: 6px 6px 0 0;
+  padding: 20px 20px;
 }
 
 h1 {
@@ -65,20 +49,29 @@ h1 {
 p {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  color: #ffffff;
   display: flex;
-  padding: 1rem 1rem 2.5rem 1rem;
+  padding: 20px 15px;
   margin: 0;
+}
+
+nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-self: stretch;
 }
 
 .Pravidla {
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
   text-decoration: none;
   color: #ffffff;
   display: block;
   flex-grow: 1;
   background-color: #1fcca4;
   margin: 0;
-  padding: 20px;
+  padding: 15px;
 }
 
 .Pravidla:hover {
@@ -88,14 +81,88 @@ p {
 .Hrát {
   flex-grow: 1;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
   color: #ffffff;
   text-decoration: none;
   display: block;
   background-color: #0197f6;
   margin: 0;
-  padding: 20px;
+  padding: 15px;
 }
 
 .Hrát:hover {
   background-color: #0090e9;
+}
+
+/*styly pro pravidla.html a různé šířky obrazovek*/
+
+.obsah {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  width: 80vw;
+  background-color: #283e50;
+}
+h1 {
+  text-align: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 6px 6px 0 0;
+  background-color: #283e50;
+  width: 360px;
+}
+
+.li {
+  margin-top: 15px;
+  background-color: #283e50;
+}
+
+/*nastavení křížek, kolečko*/
+.cross,
+.circle {
+  width: 0.7em;
+  filter: invert(100%);
+}
+.pictures img {
+  max-width: 90%;
+}
+
+.pictures__item {
+  max-width: 45%;
+}
+
+figure {
+  padding: 0 0 1rem 0;
+  margin: 4px;
+  font-size: 60%;
+}
+
+figcaption {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/*nastavení pro zobrazení*/
+@media (min-width: 540px) {
+  .pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+figure {
+  width: calc((100%-35px) / 2);
+}
+
+@media (min-width: 960px) {
+  .body__obsah {
+    max-width: 1200px;
+    line-height: 2;
+  }
 }
