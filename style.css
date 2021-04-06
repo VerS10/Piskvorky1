@@ -96,73 +96,213 @@ nav {
 
 /*styly pro pravidla.html a různé šířky obrazovek*/
 
-.obsah {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5;
-  width: 80vw;
-  background-color: #283e50;
-}
-h1 {
-  text-align: center;
-}
-
 .description {
-  display: flex;
-  flex-direction: column;
+  max-width: 800px;
+  background-color: #283e50;
+  border-radius: 10px 10px 0 0;
+  margin: 3.25rem;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
   text-align: left;
-  border-radius: 6px 6px 0 0;
-  background-color: #283e50;
-  width: 360px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-.li {
-  margin-top: 15px;
-  background-color: #283e50;
+.prehled-pravidel {
+  margin-top: 0.625rem;
+  padding: 0.625rem;
 }
 
-/*nastavení křížek, kolečko*/
-.cross,
-.circle {
-  width: 0.7em;
+.h1 {
+  margin: 0;
+  padding-bottom: 0.625rem;
+  font-family: 'Lobster', cursive;
+  font-weight: normal;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.postup li {
+  padding: 0 0 0.625rem 0.625rem;
+}
+
+.circle,
+.cross {
+  width: 1em;
+  height: 1em;
   filter: invert(100%);
 }
-.pictures img {
-  max-width: 90%;
+
+.pictures {
+  padding: 0;
 }
 
-.pictures__item {
-  max-width: 45%;
-}
-
-figure {
-  padding: 0 0 1rem 0;
-  margin: 4px;
-  font-size: 60%;
-}
-
-figcaption {
-  flex-grow: 1;
+.picture__item {
+  font-size: 1rem;
   text-align: center;
-  padding: 0 20px;
+  margin-bottom: 2.5rem;
 }
 
-/*nastavení pro zobrazení*/
-@media (min-width: 540px) {
+.priklad__picture {
+  width: 100%;
+}
+
+.priklad__text {
+  font-style: italic;
+  padding-top: 0.3rem;
+}
+
+/* široká obrazovka / tablet */
+@media only screen and (min-width: 600px) {
+  .description {
+    font-size: 1.2rem;
+  }
+  .h1 {
+    font-size: 3rem;
+  }
+  .prehled-pravidel {
+    padding: 1rem 1.5rem, 1rem 1rem;
+  }
   .pictures {
+    padding: 1.875rem 1.875rem 0 1.875rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  .description__item {
+    margin: 0;
+    padding-bottom: 2.5rem;
+    width: calc((100% - 1.875rem) / 2);
+  }
 }
 
-figure {
-  width: calc((100%-35px) / 2);
+/* ultra široká obrazovka / PC */
+@media only screen and (min-width: 1200px) {
+  .description {
+    max-width: 1000px;
+  }
 }
 
-@media (min-width: 960px) {
-  .body__obsah {
-    max-width: 1200px;
-    line-height: 2;
+/* Stránka hra: */
+.hra {
+  max-width: 80vmin;
+  margin: 3% 0;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hlavicka__nadpis {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lobster', cursive;
+  font-weight: normal;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hlavicka__detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 0;
+}
+
+.hrac {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: calc(((100% - 1rem) / 3) * 2);
+}
+
+.hrac__text {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 2%;
+}
+
+.hrac__symbol--kolecko-bile {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  filter: invert(100%);
+}
+
+.hra__tlacitko {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc((100% - 1rem) / 3);
+}
+
+.hra__tlacitko a {
+  display: block;
+  margin: 0 3%;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+.hra__tlacitko--zelene img,
+.hra__tlacitko--modre img {
+  width: 100%;
+}
+
+.hra__tlacitko--zelene {
+  background-color: #1fcca4;
+}
+
+.hra__tlacitko--zelene:hover,
+.hra__tlacitko--zelene:focus {
+  background-color: #1cbb96;
+}
+
+.hra__tlacitko--modre {
+  background-color: #0197f6;
+}
+
+.hra__tlacitko--modre:hover,
+.hra__tlacitko--modre:focus {
+  background-color: #0090e9;
+}
+
+.herni-pole {
+  border: 2px solid black;
+  border-right: none;
+}
+
+.herni-pole__rada {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  padding: 0;
+  border-bottom: 2px solid black;
+}
+
+.herni-pole:last-child {
+  border-bottom: none;
+}
+
+/* Úzká obrazovka */
+button {
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-right: 2px solid black;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+button:hover,
+button:focus {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Široka obrazovka */
+@media only screen and (min-width: 600px) {
+  button {
+    width: 3rem;
+    height: 3rem;
   }
 }
