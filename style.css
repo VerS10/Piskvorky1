@@ -20,6 +20,7 @@ body {
   background-image: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
@@ -96,7 +97,7 @@ nav {
 
 /*styly pro pravidla.html a různé šířky obrazovek*/
 
-.description {
+.description .body {
   max-width: 800px;
   background-color: #283e50;
   border-radius: 10px 10px 0 0;
@@ -107,11 +108,6 @@ nav {
   text-align: left;
   font-size: 1rem;
   line-height: 1.5;
-}
-
-.prehled-pravidel {
-  margin-top: 0.625rem;
-  padding: 0.625rem;
 }
 
 .h1 {
@@ -136,10 +132,13 @@ nav {
 }
 
 .pictures {
-  padding: 0;
+  padding: 1.875rem 1.875rem 0 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.picture__item {
+.pictures__item {
   font-size: 1rem;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -223,7 +222,7 @@ nav {
   margin-right: 2%;
 }
 
-.hrac__symbol--kolecko-bile {
+.hrac__symbol {
   display: block;
   width: 1.2rem;
   height: 1.2rem;
@@ -268,35 +267,68 @@ nav {
 }
 
 .herni-pole {
-  border: 2px solid black;
-  border-right: none;
-}
-
-.herni-pole__rada {
-  width: 100%;
-  text-align: center;
+  border: none;
+  width: 80vmin;
+  height: 80vmin;
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
-  border-bottom: 2px solid black;
-}
-
-.herni-pole:last-child {
-  border-bottom: none;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Úzká obrazovka */
 button {
   padding: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: none;
-  border-right: 2px solid black;
+  margin: 0;
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  flex: 0 0 calc(100% / 10);
+  border: 1px solid black;
   background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  overflow: visible;
+  background-size: 0;
+  transition: ease-in 0.15s background-size;
 }
 
 button:hover,
-button:focus {
+button:focus-within button:active {
   background: rgba(255, 255, 255, 0.4);
+}
+.button--circle {
+  background-image: url(circle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  background-origin: border-box;
+}
+
+.button--cross {
+  background-image: url(cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+.button--circle:hover,
+.button--circle:focus-within,
+.button--circle:active {
+  background: rgba(255, 255, 255, 0.5);
+  background-image: url(circle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  background-origin: border-box;
+}
+
+.button--cross:hover,
+.button--cross:focus-within,
+.button--cross:active {
+  background: rgba(255, 255, 255, 0.5);
+  background-image: url(cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
 }
 
 /* Široka obrazovka */
